@@ -17,9 +17,9 @@ void enqueue_struct(Queue* q, int order, int qt){
   Node *new_node=(Node*) malloc(sizeof(Node));
   if(new_node){ 
       new_node->order_number=order;
-      printf("[%d] ",order);
+      //printf("[%d] ",order);
       new_node->qty=qt;
-      printf("{%d} ",qt);
+      //printf("{%d} ",qt);
     new_node->nextPtr=NULL;
     if(q->headPtr==NULL) q->headPtr=new_node;
     else q->tailPtr->nextPtr=new_node;
@@ -37,21 +37,24 @@ int dequeue_struct(Queue *q){
     {
       switch(t->order_number){
         case 1: 
-          printf("\nRamen");
+          printf("My order is 1\n");
+          //printf("\nRamen");
           cost=cost+(PRICE_1*t->qty);
-          printf("(%dx, %d)",t->qty,cost);
+          //printf("(%dx, %d)",t->qty,cost);
           break;
         case 2: 
-          printf("\nSomtum");
+          printf("My order is 2\n");
+          //printf("\nSomtum");
           cost=cost+(PRICE_2*t->qty);
-          printf("(%dx, %d)",t->qty,cost);
+          //printf("(%dx, %d)",t->qty,cost);
           break;
         case 3: 
-          printf("\nFried Chicken");
+          printf("My order is 3\n");
+          //printf("\nFried Chicken");
           cost=cost+(PRICE_3*t->qty);
-          printf("(%dx, %d)",t->qty,cost);
+          //printf("(%dx, %d)",t->qty,cost);
           break;
-        default: printf("\nNo food"); break;
+        default: printf("No food\n"); break;
       }
     }
     q->headPtr=t->nextPtr;
